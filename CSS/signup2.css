@@ -1,0 +1,43 @@
+body *{
+    font-family: 'Khula', sans-serif;
+}
+
+.btnNext{
+    position: absolute;
+    bottom: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#boton{
+    width: 100%;
+    padding: 20px 0px;
+    background-color: #ff00bf;
+    border: 1px solid  #ff00bf;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+#nameUser{
+    margin-top: 20px;
+}
+
+#emailUser{
+    margin-top: 20px;
+}
+
+#ts{
+    margin-top: 20px;
+}
+
+#check{
+   position: absolute;
+    top: -2px;
+}
+
+.terms{
+    display: inline-block;
+    padding-left: 20px;
+}

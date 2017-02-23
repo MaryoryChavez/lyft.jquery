@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Lyft - Sign Up</title>
+    <!--Lyft.ico-->
+    <link rel="apple-touch-icon" sizes="57x57" href="lyft.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="lyft.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="lyft.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="lyft.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="lyft.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="lyft.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="lyft.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="lyft.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="lyft.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="lyft.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="lyft.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="lyft.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="lyft.ico/favicon-16x16.png">
+    <link rel="manifest" href="lyft.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <!--Generales-->
+    <link rel="stylesheet" href="CSS/flags.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Khula:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/signup.css">
+    <meta name="theme-color" content="#ff00bf">
+    <!--JS Bootstrap-->
+    <script src="JS/jquery-3.1.1.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+</head>
+
+<body onload="listCountries(event)">
+    <header class="text-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="titulo">
+                    <div class="col-xs-12 col-sm-12">
+                        <h1>Sign Up</h1>
+                        <p>Join now for free ride credit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="cellphone">
+        <div class="continer">
+            <div class="col-sm-12 col-xs-12">
+                <div class="btn-group" id="grupal">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="valorCount">
+                    </button>
+                    <ul class="dropdown-menu" id="listCountries">
+                        <h1>Select Country</h1>
+                        <p>Common countries</p>
+                    </ul>
+                    <div id="dialNumber"></div>
+                    <input type="number" id="inputNumber">
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <p class="text-center">We'll send a text to verify your phone</p>
+            </div>
+            <div class="col-sm-12 col-xs-12 text-center btnNext">
+                <button onclick="aleatoriPass()" id="boton">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="JS/countries.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+
+</html>

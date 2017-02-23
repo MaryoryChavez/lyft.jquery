@@ -1,0 +1,114 @@
+/*------------------------ GENERALES ------------------------*/
+
+body *{
+    font-family: 'Khula', sans-serif;
+}
+
+
+
+/*------------------------ SECTION CELLPHONE ------------------------*/
+
+#grupal{
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#valorCount{
+    padding: 0px 5px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    border: none;
+}
+
+#dialNumber{
+    float: left;
+    margin-left: 5px;
+    padding: 12px 0px;
+    border-left: 1px solid #d4d4d4;
+}
+
+#inputNumber{
+    border: none;
+    padding: 12px 0px;
+    width: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#cellphone p{
+    padding-top: 20px;
+}
+
+
+
+/*------------------------ DROPDOWN-MENU ------------------------*/
+
+
+#listCountries {
+    top: -100px;
+    |right: -10px;
+    |padding: 20px 200px;
+    width: 100%;
+    position:absolute;
+    list-style: none;
+    overflow: hidden;
+    |overflow-y: auto;
+}
+
+#listCountries li{
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    display: block;
+    text-align: inherit;
+}
+
+#listCountries h1{
+    |margin-left: -180px;
+    |margin-right: -150px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 220%;
+}
+
+#listCountries p{
+    margin-left: 0px;
+    padding: 20px 10px;
+    background-color: #f0f8ff;
+    width: 100%;
+}
+
+#listCountries li a{
+    padding-top: 6px;
+    width: 170px;
+    height: auto;
+    display:inline-block;
+    position:absolute;
+}
+
+
+/*------------------------ BOTON ------------------------*/
+
+
+.btnNext{
+    position: absolute;
+    bottom: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#boton{
+    width: 98%;
+    padding: 20px 0px;
+    background-color: #ff00bf;
+    border: 1px solid  #ff00bf;
+    color: #fff;
+    font-size: 1.5em;
+}
