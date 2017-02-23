@@ -22,6 +22,10 @@
     <link rel="manifest" href="lyft.ico/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <!--Alertfy-->
+    <script src="JS/alertify.js"></script>
+    <link rel="stylesheet" href="CSS/alertify.core.css">
+    <link rel="stylesheet" href="CSS/alertify.default.css">
     <!--Generales-->
     <link rel="stylesheet" href="CSS/flags.css">
     <link rel="stylesheet" href="CSS/bootstrap.css">
@@ -33,7 +37,7 @@
     <script src="JS/bootstrap.min.js"></script>
 </head>
 
-<body onload="listCountries(event)">
+<body>
     <header class="text-center">
         <div class="container-fluid">
             <div class="row">
@@ -58,20 +62,20 @@
                         <p>Common countries</p>
                     </ul>
                     <div id="dialNumber"></div>
-                    <input type="number" id="inputNumber">
+                    <input type="number" pattern="[0-9]*" inputmode="numeric" id="inputNumber">
                 </div>
             </div>
             <div class="col-sm-12 col-xs-12">
                 <p class="text-center">We'll send a text to verify your phone</p>
             </div>
             <div class="col-sm-12 col-xs-12 text-center btnNext">
-                <button onclick="aleatoriPass()" id="boton">Next</button>
+                <button id="boton">Next</button>
             </div>
         </div>
     </section>
 
     <script src="JS/countries.js"></script>
-    <script src="JS/main.js"></script>
+    <script src="JS/signup.js"></script>
 </body>
 
 </html>

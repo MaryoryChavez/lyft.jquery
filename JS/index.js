@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $('#logIn').click(function () {
-        //console.log("si");
         if (localStorage.length < 4) {
             alertify.alert("No estas registrado");
         } else {

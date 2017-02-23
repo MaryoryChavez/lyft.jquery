@@ -26,12 +26,13 @@ body *{
     margin-left: 5px;
     padding: 12px 0px;
     border-left: 1px solid #d4d4d4;
+    |width: 10%;
 }
 
 #inputNumber{
     border: none;
     padding: 12px 0px;
-    width: auto;
+    |width: 80%;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
