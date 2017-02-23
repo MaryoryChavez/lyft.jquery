@@ -19,7 +19,6 @@ $("#boton").click(function () {
     alertify.alert("Tu codigo es: " + aleatory);
 
     $("#alertify-ok").click(function () {
-        console.log("si");
         var cellphone = $('#dialNumber').html() + "" + $('#inputNumber').val();
         localStorage.setItem("codigo", aleatory);
         localStorage.setItem("cellphone", cellphone);
