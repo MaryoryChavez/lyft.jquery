@@ -1,6 +1,8 @@
+$("#boton").click(validate);
+
 function theName(_nameUser){
     if(_nameUser.length<3 || _nameUser.length >30){
-        alert("no")
+        alertify.alert("Debes ingresar tus datos")
         return false;
     }else{
             localStorage.setItem("nombre",_nameUser);
@@ -11,7 +13,7 @@ function theName(_nameUser){
 
 function theMail(_emailUser){
     if(_emailUser.length<3 || _emailUser.length>50){
-     alert("no")
+     alertify.alert("Debes ingresar tus datos")
         return false;   
     }else{
         localStorage.setItem("email",_emailUser);
@@ -20,11 +22,11 @@ function theMail(_emailUser){
 }
 
 function validate(){
-    var nameUser = document.getElementById("nameUser").value;
-    var emailUser = document.getElementById("emailUser").value;
+    var nameUser = $("#nameUser").val();
+    var emailUser = $("#emailUser").val();
     
     if(theName(nameUser)==true && theMail(emailUser)==true){
-        alert("si");
+        alertify.alert("Datos guardados correctamente");
         location.href = "mapa.html";
     }
     console.log(localStorage.length)
