@@ -1,8 +1,8 @@
-body *{
+body * {
     font-family: 'Khula', sans-serif;
 }
 
-.btnNext{
+.btnNext {
     position: absolute;
     bottom: 3em;
     margin-left: auto;
@@ -11,33 +11,33 @@ body *{
     right: 0;
 }
 
-#boton{
+#boton {
     width: 100%;
     padding: 20px 0px;
     background-color: #ff00bf;
-    border: 1px solid  #ff00bf;
+    border: 1px solid #ff00bf;
     color: #fff;
     font-size: 1.5em;
 }
 
-#nameUser{
+#nameUser {
     margin-top: 20px;
 }
 
-#emailUser{
+#emailUser {
     margin-top: 20px;
 }
 
-#ts{
+#ts {
     margin-top: 20px;
 }
 
-#check{
-   position: absolute;
+#check {
+    position: absolute;
     top: -2px;
 }
 
-.terms{
+.terms {
     display: inline-block;
     padding-left: 20px;
 }

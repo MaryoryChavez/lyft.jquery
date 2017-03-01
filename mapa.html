@@ -17,27 +17,44 @@
     <link rel="stylesheet" href="CSS/map.css">
     <meta name="theme-color" content="#ff00bf">
     <script src="JS/jquery-3.1.1.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
 </head>
 
 <body>
-      <header>
-          <div class="container">
-              <div class="row">
-                  <div>
-                      <h4>Mapa</h4>
-                  </div>
-              </div>
-          </div>
-      </header>
-       <section>
-           
-       </section>
-        <div id="map"></div>
-    <div class="container">
-        <div id="iniciar">
-            <a href="#" id="localizar">Localizar</a>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <img src="images/lyftMap.png" alt="">
+                </div>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <div id="map"></div>
+
+    <footer>
+        <div class="container">
+            <div id="pickup">
+                <div class="text-left" id="direccion">
+                    <div class="dropup">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a href="#">Line</a></li>
+                            <li><a href="#">Lyft</a></li>
+                            <li><a href="#">Plus</a></li>
+                            <li><a href="#">Premier</a></li>
+                        </ul>
+                    </div>
+                    <p>2300 Harrison St</p>
+                    <p>Pickup location</p>
+                </div>
+                <button id="btnPickup">Set pickup</button>
+            </div>
+        </div>
+    </footer>
 
     <script src="JS/map.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMQBZzSHRFjWpATGQYcs_KCxZT4uvzzbc&callback=initMap">

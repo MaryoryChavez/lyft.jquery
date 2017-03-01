@@ -4,24 +4,21 @@ var idRegistroPosicion;
 var ultimaPosicionUsuario;
 var marcadorUsuario;
 var mapa;
-var div = $('#map')[0];
+var div = document.getElementById("map");
 
-$(document).ready(initMap);
+//$(document).ready(initMap);
 
 function initMap() {
     mapa = new google.maps.Map(div, {
-        zoom: 8,
-        center: new google.maps.LatLng(-16.406684, -71.537639),
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        zoom: 16,
+        center: new google.maps.LatLng(-16.457618, -71.529091),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true
     });
-
-
-    $('#localizar').on('click', function (evt) {
-        registrarPosicion();
-        evt.preventDefault();
-    });
+    registrarPosicion();
+    setMarkers(mapa);
+    //evt.preventDefault();
 }
-
 function registrarPosicion() {
     if (registrandoPosicion) {
         registrandoPosicion = false;
@@ -63,4 +60,32 @@ function limpiarUbicacion() {
         marcadorUsuario.setMap(null);
         marcadorUsuario = null;
     }
+}
+
+var cars = [
+  ['taxi1', -16.457618, -71.529091, 4],
+    ['taxi2', -16.455180, -71.529413,3],
+    ['taxi3',-16.457464, -71.527922,2],
+    ['taxi4',-16.460479, -71.528651,1]
+];
+
+function setMarkers(map) {
+    console.log('hhjh');
+    var image = {
+    url: 'images/car.png',
+    size: new google.maps.Size(39, 75),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(0, 32)
+  };
+
+    for (var i = 0; i < cars.length; i++) {
+    var taxi = cars[i];
+    var marker = new google.maps.Marker({
+      position: {lat: taxi[1], lng: taxi[2]},
+      map: map,
+      icon: image,
+      title: taxi[0],
+      zIndex: taxi[3]
+    });
+  }
 }

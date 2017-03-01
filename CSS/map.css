@@ -1,18 +1,94 @@
-
 html {
     background: url(../images/start4.png);
-    background-size: cover; 
+    background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
     height: 100%;
 }
-body{
+
+body {
     background: none;
     height: 100%;
     text-align: center;
 }
 
+body * {
+    font-family: 'Khula', sans-serif;
+}
+
 #map {
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
+}
+
+header img {
+    width: 30%;
+    position: absolute;
+    z-index: 500;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#direccion {
+    position: absolute;
+    bottom: 3.5em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #dbd7d7;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    |font-size: 1.2em;
+}
+
+#direccion ul {
+    |width: 100%;
+    position: absolute;
+    bottom: 15px;
+}
+
+#direccion button {
+    border-radius: 100%;
+    padding: 4px 6px 0px 6px;
+    border: 1px solid #403f3f;
+    position: absolute;
+    margin-left: 3px;
+    top: 5px;
+}
+
+#direccion p {
+    margin-left: 40px;
+}
+
+#direccion p:nth-child(2) {
+    margin-bottom: 0;
+    font-size: 1.17em;
+}
+
+#direccion p:nth-child(3) {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #848484;
+    font-size: 0.89em;
+}
+
+#btnPickup {
+    position: absolute;
+    width: 100%;
+    padding: 8px 0px;
+    border-radius: 5px;
+    background-color: #450f84;
+    border: 1px solid #450f84;
+    color: #fff;
+    font-size: 1.3em;
+    bottom: 0em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 }
