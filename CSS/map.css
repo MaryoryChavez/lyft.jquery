@@ -52,6 +52,42 @@ header img {
     bottom: 15px;
 }
 
+#direccion ul li{
+    padding: 5px 0;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+#direccion ul li a{
+    padding: 0px;
+}
+
+#direccion ul li a img{
+    width: 23%;
+    position: absolute;
+    margin-top: 6px;
+}
+
+#direccion ul li a p{
+margin-left: 60px;
+}
+
+#direccion ul li p:nth-child(4){
+    margin: 0px;
+    margin-left: 15em;
+    position: absolute;
+    margin-top: -40px;
+    left: -10px;
+}
+
+#direccion p:nth-child(5){
+    position: absolute;
+    left: 10.7em;
+    margin-top: -17px;
+    color: #848484;
+    font-size: 0.89em;
+}
+
 #direccion button {
     border-radius: 100%;
     padding: 4px 6px 0px 6px;
@@ -77,6 +113,8 @@ header img {
     font-size: 0.89em;
 }
 
+
+
 #btnPickup {
     position: absolute;
     width: 100%;
@@ -91,4 +129,88 @@ header img {
     margin-right: auto;
     left: 0;
     right: 0;
+}
+
+/*--------------------->> Menu estado Hidden Request Lyft <<---------------------*/
+
+#btnRequest {
+    position: absolute;
+    width: 100%;
+    padding: 8px 0px;
+    border-radius: 5px;
+    background-color: #ff00bf;
+    border: 1px solid #ff00bf;
+    color: #fff;
+    font-size: 1.3em;
+    bottom: 0em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#pru #menu2{
+    background-color: #fff;
+    position: absolute;
+    |top: 16.5em;
+    width: 90%;
+    border-radius: 10px;
+    |border: 1px solid #c6c6c6;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+
+#menu2 table{
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#menu2 table tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+#menu2 table tr:nth-child(1){
+    background-color: #f3f3f5;
+}
+
+#menu2 table tr:nth-child(1) td:nth-child(2){
+    text-align: left;
+}
+
+#menu2 table tr:nth-child(1) td:nth-child(1){
+    text-align: right;
+    padding-right: 10px;
+    width: 50%;
+}
+
+#menu2 table tr:nth-child(1) img{
+    width: 70%;
+}
+
+#menu2 table tr:nth-child(2){
+    background-color: #f3f3f5;
+}
+
+#menu2 table tr:nth-child(3) td, #menu2 table tr:nth-child(4) td{
+    text-align: left;
+    padding-left: 20px;
+}
+
+#menu2 p:nth-child(1){
+    font-size: 1.17em;
+    margin-bottom: 0px;
+}
+
+#menu2 p:nth-child(2){
+    margin-top: 0px;
+    font-size: 0.89em;
+    color: #848484;
 }

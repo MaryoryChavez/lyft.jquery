@@ -89,3 +89,10 @@ function setMarkers(map) {
     });
   }
 }
+
+$('#btnPickup').click(nextPage);
+
+function nextPage(){
+    $('#pickup').hide();
+    $('#pru').show();
+}
