@@ -150,13 +150,12 @@ margin-left: 60px;
 }
 
 #pru #menu2{
-    background-color: #fff;
+    |background-color: #fff;
     position: absolute;
     |top: 16.5em;
     width: 90%;
-    border-radius: 10px;
+    |border-radius: 10px;
     |border: 1px solid #c6c6c6;
-    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -171,6 +170,9 @@ margin-left: 60px;
     right: 0;
     width: 100%;
     border-radius: 10px;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fff;
+    overflow: hidden;
 }
 
 #menu2 table tr{
@@ -199,9 +201,18 @@ margin-left: 60px;
     background-color: #f3f3f5;
 }
 
+#menu2 table tr:nth-child(2) td:nth-child(1){
+    border-right: 1px solid #dddddd;
+}
+
+#menu2 table tr:nth-child(2) td:nth-child(1) img{
+width: 20%;
+}
+
 #menu2 table tr:nth-child(3) td, #menu2 table tr:nth-child(4) td{
     text-align: left;
-    padding-left: 20px;
+    position: relative;
+    left: 10px;
 }
 
 #menu2 p:nth-child(1){
@@ -214,3 +225,4 @@ margin-left: 60px;
     font-size: 0.89em;
     color: #848484;
 }
+
