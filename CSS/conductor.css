@@ -16,9 +16,10 @@ body *{
 }
 
 #foto{
+    border: 10px solid rgba(0, 0, 0, 0.02);
     border-radius: 100%;
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     overflow: hidden;
     position: relative;
     margin-left: auto;
@@ -31,11 +32,22 @@ body *{
     left: -2.5em;
     |border-radius: 100%;
 }
-#pay ul{}
+#tip{ 
+    margin-top: 3em;
+    |padding: 10px;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
-#pay ul li{
+#tip li{
     display:inline-block;
-    cursor: pointer;   
+    cursor: pointer;
+    |border-left: 1px solid #d6d6d6;
+    |padding-left: 1em;
+    |padding-right: 1em;
+    |margin: 0px;
 }
 
 /*------------------->> FOOTER <<-------------------*/

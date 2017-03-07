@@ -17,8 +17,10 @@ function initMap() {
     });
     registrarPosicion();
     setMarkers(mapa);
+    //solicitarEstimado();
     //evt.preventDefault();
 }
+
 function registrarPosicion() {
     if (registrandoPosicion) {
         registrandoPosicion = false;
@@ -41,10 +43,12 @@ function exitoRegistroPosicion(position) {
             position: ultimaPosicionUsuario,
             map: mapa
         });
+        direccion();
     } else {
         var posicionActual = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         ultimaPosicionUsuario = posicionActual;
         marcadorUsuario.setPosition(posicionActual);
+        //console.log('si');
     }
     mapa.panTo(ultimaPosicionUsuario);
 }
@@ -64,35 +68,124 @@ function limpiarUbicacion() {
 
 var cars = [
   ['taxi1', -16.457618, -71.529091, 4],
-    ['taxi2', -16.455180, -71.529413,3],
-    ['taxi3',-16.457464, -71.527922,2],
-    ['taxi4',-16.460479, -71.528651,1]
+    ['taxi2', -16.455180, -71.529413, 3],
+    ['taxi3', -16.457464, -71.527922, 2],
+    ['taxi4', -16.460479, -71.528651, 1]
 ];
 
 function setMarkers(map) {
-    console.log('hhjh');
+    //console.log('hhjh');
     var image = {
-    url: 'images/car.png',
-    size: new google.maps.Size(39, 75),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(0, 32)
-  };
+        url: 'images/car.png',
+        size: new google.maps.Size(39, 75),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 32)
+    };
 
     for (var i = 0; i < cars.length; i++) {
-    var taxi = cars[i];
-    var marker = new google.maps.Marker({
-      position: {lat: taxi[1], lng: taxi[2]},
-      map: map,
-      icon: image,
-      title: taxi[0],
-      zIndex: taxi[3]
-    });
-  }
+        var taxi = cars[i];
+        var marker = new google.maps.Marker({
+            position: {
+                lat: taxi[1],
+                lng: taxi[2]
+            },
+            map: map,
+            icon: image,
+            title: taxi[0],
+            zIndex: taxi[3]
+        });
+    }
 }
+
+
+
+function direccion(){
+    solicitarEstimado();
+    $('#origenInicio').html(localStorage.getItem('origen'));
+};
+
 
 $('#btnPickup').click(nextPage);
 
-function nextPage(){
+function nextPage() {
     $('#pickup').hide();
     $('#pru').show();
+    //console.log($('#nameCar'));
+    $('#nameCar').html('<p>' + localStorage.getItem('carro') + '</p>' +
+        '<p>Fast ride, 4 seats</p>');
+
+    $('#precioEstimado').html('<p>' + localStorage.getItem('moneda') + localStorage.getItem('estimadoMin') + ' - ' + localStorage.getItem('estimadoMax') + '</p>' +
+        '<p>Price estimate</p>');
+
+    $('#direccionOrigen').html('<p>' + localStorage.getItem('origen') + '</p>');
+    $('#direccionDestino').html('<p>' + localStorage.getItem('destino') + '</p>');
 }
+
+$("#return").click(regresar);
+
+function regresar() {
+    $('#pickup').show();
+    $('#pru').hide();
+}
+
+// Set Pickup
+
+var line = $('footer ul li:nth-child(1) a');
+var lyft = $('footer ul li:nth-child(2) a');
+var plus = $('footer ul li:nth-child(3) a');
+var premier = $('footer ul li:nth-child(4) a');
+
+line.click(function () {
+    localStorage.setItem('tipo', 1);
+    localStorage.setItem('carro', 'Line');
+    solicitarEstimado();
+});
+
+lyft.click(function () {
+    localStorage.setItem('tipo', 2);
+    localStorage.setItem('carro', 'Lyft');
+    solicitarEstimado();
+});
+
+plus.click(function () {
+    localStorage.setItem('tipo', 3);
+    localStorage.setItem('carro', 'Plus');
+    solicitarEstimado();
+});
+
+premier.click(function () {
+    localStorage.setItem('tipo', 4);
+    localStorage.setItem('carro', 'Premier');
+    solicitarEstimado();
+    console.log(dataGlobal);
+});
+
+
+// Requerimiento Solicitar Estimado
+var dataGlobal = null;
+
+function solicitarEstimado() {
+    $.ajax({
+        url: 'https://clientes.geekadvice.pe/api/estimado',
+        data: {
+            tipo: localStorage.getItem('tipo'),
+        }
+    }).success(function (_data) {
+        console.log(_data);
+        dataGlobal = _data;
+        localStorage.setItem('origen', _data.origen)
+        localStorage.setItem('destino', _data.destino);
+        localStorage.setItem('estimadoMax', _data.estimado.max);
+        localStorage.setItem('estimadoMin', _data.estimado.min);
+        localStorage.setItem('moneda', _data.estimado.moneda);
+        localStorage.setItem('tipo', _data.tipo);
+    }).fail(function () {
+        alert('error')
+    });
+}
+
+// Next
+
+$('#btnRequest').click(function(){
+    location.href = "conductor.html";
+});
