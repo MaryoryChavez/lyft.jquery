@@ -5,6 +5,7 @@ var ultimaPosicionUsuario;
 var marcadorUsuario;
 var mapa;
 var div = document.getElementById("map");
+var dataGlobal = null;
 
 //$(document).ready(initMap);
 
@@ -17,6 +18,7 @@ function initMap() {
     });
     registrarPosicion();
     setMarkers(mapa);
+    //solicitarEstimado();
     //solicitarEstimado();
     //evt.preventDefault();
 }
@@ -100,26 +102,10 @@ function setMarkers(map) {
 
 
 function direccion(){
-    solicitarEstimado();
-    $('#origenInicio').html(localStorage.getItem('origen'));
+    //solicitarEstimado();
+    //$('#origenInicio').html(localStorage.getItem('origen'));
 };
 
-
-$('#btnPickup').click(nextPage);
-
-function nextPage() {
-    $('#pickup').hide();
-    $('#pru').show();
-    //console.log($('#nameCar'));
-    $('#nameCar').html('<p>' + localStorage.getItem('carro') + '</p>' +
-        '<p>Fast ride, 4 seats</p>');
-
-    $('#precioEstimado').html('<p>' + localStorage.getItem('moneda') + localStorage.getItem('estimadoMin') + ' - ' + localStorage.getItem('estimadoMax') + '</p>' +
-        '<p>Price estimate</p>');
-
-    $('#direccionOrigen').html('<p>' + localStorage.getItem('origen') + '</p>');
-    $('#direccionDestino').html('<p>' + localStorage.getItem('destino') + '</p>');
-}
 
 $("#return").click(regresar);
 
@@ -135,53 +121,68 @@ var lyft = $('footer ul li:nth-child(2) a');
 var plus = $('footer ul li:nth-child(3) a');
 var premier = $('footer ul li:nth-child(4) a');
 
+// prueba
+
+var tipoNum = null;
+
+
 line.click(function () {
-    localStorage.setItem('tipo', 1);
+    //console.log('si');
+    tipoNum = 1;
+    solicitarEstimado(tipoNum);
     localStorage.setItem('carro', 'Line');
-    solicitarEstimado();
 });
 
 lyft.click(function () {
-    localStorage.setItem('tipo', 2);
+    tipoNum = 2;
+    solicitarEstimado(tipoNum);
     localStorage.setItem('carro', 'Lyft');
-    solicitarEstimado();
 });
 
 plus.click(function () {
-    localStorage.setItem('tipo', 3);
+    tipoNum = 3;
+    solicitarEstimado(tipoNum);
     localStorage.setItem('carro', 'Plus');
-    solicitarEstimado();
 });
 
 premier.click(function () {
-    localStorage.setItem('tipo', 4);
+    tipoNum = 4;
+    solicitarEstimado(tipoNum);
     localStorage.setItem('carro', 'Premier');
-    solicitarEstimado();
-    console.log(dataGlobal);
+    //console.log(dataGlobal.origen);
 });
 
 
 // Requerimiento Solicitar Estimado
-var dataGlobal = null;
 
-function solicitarEstimado() {
+function solicitarEstimado(tipoNum) {
     $.ajax({
         url: 'https://clientes.geekadvice.pe/api/estimado',
-        data: {
-            tipo: localStorage.getItem('tipo'),
+        data:{
+            tipo: tipoNum,
         }
-    }).success(function (_data) {
+    }).success(function(_data) {
         console.log(_data);
         dataGlobal = _data;
-        localStorage.setItem('origen', _data.origen)
-        localStorage.setItem('destino', _data.destino);
-        localStorage.setItem('estimadoMax', _data.estimado.max);
-        localStorage.setItem('estimadoMin', _data.estimado.min);
-        localStorage.setItem('moneda', _data.estimado.moneda);
-        localStorage.setItem('tipo', _data.tipo);
+        $('#btnPickup').click(nextPage);
     }).fail(function () {
         alert('error')
     });
+}
+
+
+function nextPage() {
+    $('#pickup').hide();
+    $('#pru').show();
+    //console.log($('#nameCar'));
+    $('#nameCar').html('<p>' + localStorage.getItem('carro') + '</p>' +
+        '<p>Fast ride, 4 seats</p>');
+
+    $('#precioEstimado').html('<p>' + dataGlobal.estimado.moneda + dataGlobal.estimado.min + ' - ' + dataGlobal.estimado.max + '</p>' +
+        '<p>Price estimate</p>');
+
+    $('#direccionOrigen').html('<p>' + dataGlobal.origen + '</p>');
+    $('#direccionDestino').html('<p>' + dataGlobal.destino + '</p>');
 }
 
 // Next
