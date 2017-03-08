@@ -149,7 +149,7 @@ premier.click(function () {
     tipoNum = 4;
     solicitarEstimado(tipoNum);
     localStorage.setItem('carro', 'Premier');
-    //console.log(dataGlobal.origen);
+    //console.log(dataGlobal.origen );
 });
 
 
