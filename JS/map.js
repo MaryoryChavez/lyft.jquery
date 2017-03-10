@@ -162,7 +162,7 @@ function solicitarEstimado(tipoNum) {
             tipo: tipoNum,
         }
     }).success(function(_data) {
-        console.log(_data);
+        console.log(_data.tipo);
         dataGlobal = _data;
         $('#btnPickup').click(nextPage);
     }).fail(function () {
@@ -188,5 +188,6 @@ function nextPage() {
 // Next
 
 $('#btnRequest').click(function(){
+    localStorage.setItem('tipo',dataGlobal.tipo);
     location.href = "conductor.html";
 });

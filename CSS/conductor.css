@@ -57,6 +57,13 @@ header h1 {
 #tip li:nth-child(1) {
     margin-left: auto;
     border-left: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#tip li:nth-child(5){
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 #tip li {
@@ -67,6 +74,7 @@ header h1 {
     border-left: 1px solid #d6d6d6;
     width: 20%;
     font-size: 1.4rem;
+    
 }
 
 #tarjeta {
@@ -85,10 +93,12 @@ header h1 {
 
 #tarjeta p:nth-child(1) {
     text-align: left;
+    padding-left: 10px;
 }
 
 #tarjeta p:nth-child(2) {
     text-align: right;
+    padding-right: 10px;
 }
 
 #total {
@@ -116,4 +126,13 @@ button {
     background-color: #51516a;
     padding-top: 8px;
     border: 1px solid #51516a;
+}
+
+
+
+/*Opciones JS*/
+
+li.select{
+    background-color:  #ff00bf;
+    color: #fff;
 }
